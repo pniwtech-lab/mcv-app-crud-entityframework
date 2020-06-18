@@ -1,6 +1,6 @@
 ## Basic CRUD operations using Entity Framework
 
-This is basic MVC 5 application. In which, Using **Entity Framework** DB model is crated from existing database and perform CRUD operations in application.
+This is basic MVC 5 application. In which, Using **Entity Framework** DB model is created from existing database and perform CRUD operations in application.
 
 In this application, **Sematic UI** framework is used instead of **Bootstrap** on view. And also used **Datatable** js library to display data in paging table.
 
