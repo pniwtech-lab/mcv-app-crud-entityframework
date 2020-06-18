@@ -18,3 +18,4 @@ In this application, **Sematic UI** framework is used instead of **Bootstrap** o
 3. After above steps, Employee model will be created and available to use which will be auto-generated code.
 ```
 
+![Capture1](https://user-images.githubusercontent.com/62343586/85006744-25683680-b178-11ea-99b8-93d570914d72.PNG)
