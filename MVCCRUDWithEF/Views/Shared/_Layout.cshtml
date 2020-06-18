@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/semantic")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style type="text/css">
+        body {
+            background-image: url('../../Content/Images/crop 1.jpg');
+            background-repeat: repeat-y;
+            background-size: cover;
+        }
+            .grid {
+                height: 100%;
+            }
+    </style>
+</head>
+<body>
+    <div class="ui container">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/semantic")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿@model MVCCRUDWithEF.Models.Employee
+
+@{
+    ViewBag.Title = @ViewBag.Message + " Employee";
+}
+
+<style type="text/css">
+    .grid {
+        height: 100%;
+    }
+</style>
+
+<div class="ui segment">
+    <div class="ui grid">
+        <div class="column">
+            <h2 class="ui header left floated">
+                <i class="circular users icon"></i>
+                @ViewBag.Message Employee Information
+            </h2>
+        </div>
+    </div>
+</div>
+
+<div class="ui middle aligned grid">
+    <div class="column">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="ui stacked green segment">
+
+                @Html.HiddenFor(model => model.Emp_Id)
+
+                <div class="two fields">
+
+                    <div class=" required field">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { })
+                        <div class="ui left icon input">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @placeholder = "Enter Employee's Full Name" } })
+                            <i class="user icon blue"></i>
+                        </div>
+                    </div>
+
+                    <div class="required field">
+                        @Html.LabelFor(model => model.Position, htmlAttributes: new { })
+                        <div class="ui left icon input">
+                            @Html.EditorFor(model => model.Position, new { htmlAttributes = new { @placeholder = "Enter Employee's Position" } })
+                            <i class="street view icon blue"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="two fields">
+
+                    <div class="required field">
+                        @Html.LabelFor(model => model.Office_Location, htmlAttributes: new { })
+                        <div class="ui left icon input">
+                            @Html.EditorFor(model => model.Office_Location, new { htmlAttributes = new { @placeholder = "Enter Employee's Office Location" } })
+                            <i class="map marker alternate icon blue"></i>
+                        </div>
+                    </div>
+
+                    <div class="required field">
+                        @Html.LabelFor(model => model.Country, htmlAttributes: new { })
+                        <div class="ui left icon input">
+                            @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @placeholder = "Enter Country of Office" } })
+                            <i class="globe icon blue"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="required field">
+                    @Html.LabelFor(model => model.Address, htmlAttributes: new { })
+                    <div class="ui left icon input">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @placeholder = "Enter Address of Office" } })
+                        <i class="address book outline icon blue"></i>
+                    </div>
+                </div>
+
+
+                <div class="two fields">
+
+                    <div class="required field">
+                        @Html.LabelFor(model => model.Salary, htmlAttributes: new { })
+                        <div class="ui left icon input">
+                            @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @placeholder = "Enter Employee's Salary" } })
+                            <i class="rupee sign icon blue"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="required field">
+                        @Html.LabelFor(model => model.Age, htmlAttributes: new { })
+                        <div class="ui left icon input">
+                            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @placeholder = "Enter Employee's Age" } })
+                            <i class="birthday cake icon blue"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="field">
+                    <input type="submit" value="Save" class="ui blue button" />
+                    <a href="@Url.Action("Index","Employee")" class="ui button">Cancel</a>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/Custom")
+}

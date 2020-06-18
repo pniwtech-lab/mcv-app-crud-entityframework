@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.ui.grid > .row {
+    margin-left: 0px;
+}
+
+div.dataTables_wrapper div.row.dt-table {
+    margin-left: 0px;
+}
+
+.ui.grid > .row {
+    margin-left: 0px;
+}

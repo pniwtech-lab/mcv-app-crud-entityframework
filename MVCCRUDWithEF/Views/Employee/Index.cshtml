@@ -1,0 +1,82 @@
+﻿<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.semanticui.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.semanticui.min.css" />
+
+@model IEnumerable<MVCCRUDWithEF.Models.Employee>
+@{
+    ViewBag.Title = "Employee Information";
+}
+
+<div class="ui raised segment">
+    <div class="ui two column stackable center aligned grid">
+        <div class="middle aligned row">
+            <div class="column">
+                <h2 class="ui header left floated">
+                    <i class="circular users icon"></i>
+                    Employee Information
+                </h2>
+            </div>
+            <div class="column">
+                <div>
+                    <a class="ui blue labeled icon button" href="@Url.Action("AddOrEdit", "Employee")"><i class="user plus icon"></i>Add Employee</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="ui green raised segment">
+    <table class="ui celled table responsive selectable nowrap unstackable" id="dataTable" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Employee Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Local Address</th>
+                <th>Country</th>
+                <th>Salary($)</th>
+                <th>Age</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Emp_Id</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.Position</td>
+                    <td>@employee.Office_Location</td>
+                    <td>@employee.Address</td>
+                    <td>@employee.Country</td>
+                    <td>$@employee.Salary</td>
+                    <td>@employee.Age</td>
+                    <td>
+                        <div class="small ui buttons">
+                            <a class="ui primary button" href="@Url.Action("AddOrEdit","Employee", new { id = employee.Emp_Id})"><i class="edit icon"></i> Edit</a>
+                            <div class="or"></div>
+                            <a class="ui red button" href="@Url.Action("Delete","Employee", new { id = employee.Emp_Id})"><i class="trash icon"></i> Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.semanticui.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.semanticui.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+
+}
