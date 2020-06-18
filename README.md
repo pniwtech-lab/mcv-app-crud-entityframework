@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+## Basic CRUD operations using Entity Framework
 
-You can use the [editor on GitHub](https://github.com/pniwtech-lab/mcv-app-crud-entityframework/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is basic MVC 5 application. In which, Using **Entity Framework** DB model is crated from existing database and perform CRUD operations in application.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+In this application, **Sematic UI** framework is used instead of **Bootstrap** on view. And also used **Datatable** js library to display data in paging table.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Steps to Do:
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+1. Create Database and Employee table
+2. Build employee model from created Database in application. Steps are below:
+      * Right click on your [model] folder and select [Add] --> [New Item].
+      * Select [ADO.NET Entity Data Model]. give sepcific name to the model click on Add.
+      * Choose Model Contents i.e. [EF Designer from Database]. click on next.
+      * Create New Connection of your database server and Do all database setup.
+      * Select your Employee Table.
+3. After above steps, Employee model will be created and available to use which will be auto-generated code.
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pniwtech-lab/mcv-app-crud-entityframework/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
